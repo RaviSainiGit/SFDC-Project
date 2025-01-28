@@ -1,0 +1,16 @@
+<template>
+
+        <c-child-component first-name={firstName} last-name={lastName} email={email} phone={phone}></c-child-component>
+
+    <lightning-card title="Parent Component" icon-name="standard:account">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" name="firstName" label="First Name" onchange={changeHandler}></lightning-input>
+                <lightning-input type="text" name="lastName" label="Last Name" onchange={changeHandler}></lightning-input>
+                <lightning-input type="email" name="email" label="Email" onchange={changeHandler}></lightning-input>
+                <lightning-input type="phone" name="phone" label="Phone" onchange={changeHandler}></lightning-input>
+            </div>
+        </div>
+    </lightning-card>
+    
+</template>

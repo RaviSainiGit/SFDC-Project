@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Tab Set LWC">
+     <lightning-tabset variant="scoped">
+         <lightning-tab label="Pending">
+             <div class="tabContent"> 
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" aria-label="Example table of Opportunities with vertical borders">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Phone</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Industry</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Status</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Mobile</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={empData} for:item="empItem" >
+                            <tr class="slds-hint-parent" key={empItem.Id}>
+                                <td>
+                                    <div class="slds-truncate">{empItem.Name}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{empItem.company_name__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{empItem.company_address__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{empItem.status__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{empItem.mobile_no__c}</div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>    
+             </div>
+         </lightning-tab>
+         <lightning-tab label="Active">
+             <div class="tabContent">
+               <div class="imgRt"> 
+                 <h3 class="slds-text-heading_medium slds-text-color--error"><strong>Active</strong></h3> 
+                 <p>Creating Account Record and get the data from server in Salesforce Visualforce Page</p><br/>                      
+                 <p>How to Create Account Record and get the data from server Using Standard Controllers and Extension in Salesforce Visualforce Page Real time scenarios:- Create account record and get data using Visualforce Controller Extension.</p>
+               </div>    
+             </div>
+         </lightning-tab>
+         <lightning-tab label="Inactive">
+             <div class="tabContent"> 
+               <div class="imgRt"> 
+                 <h3 class="slds-text-heading_medium slds-text-color--error"><strong>Inactive</strong></h3> 
+                 <p>How to Build a Custom Left Sidebar Navigation Menu with Submenu using HTML, CSS and JQuery.</p><br/>                      
+                 <p>today in this post we are going to learn about how to create a custom left sidebar Navigation Menu with Submenu using HTML, CSS and JQuery. How to Add Or Remove Row Dynamically in HTML Order List Using JavaScript JQuery With Row Count (index) Value</p>
+               </div>    
+             </div>
+         </lightning-tab>
+     </lightning-tabset>
+    </lightning-card>
+ </template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Contact Record Display" icon-name="standard:contact">
+    <div style="height: 500px;">
+    <template if:true={contactList}>
+         <lightning-datatable
+                 key-field="Id"
+                 data={contactList}
+                 columns={columns}>
+         </lightning-datatable>
+    </template>
+    </div>
+</lightning-card>
+    </template>

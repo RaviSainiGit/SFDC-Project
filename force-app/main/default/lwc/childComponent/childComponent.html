@@ -1,0 +1,46 @@
+<template>
+
+    <lightning-card title="Child Component" icon-name="standard:account">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <div class="slds-p-around_medium lgc-bg">
+
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="First Name">First Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Last Name">Last Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="slds-hint-parent">
+                    <td data-label="First Name">
+                        <div class="slds-truncate" title="First Name">{firstName}</div>
+                    </td>
+                    <td data-label="Last Name">
+                        <div class="slds-truncate" title="Last Name">{lastName}</div>
+                    </td>
+                    <td data-label="Eamil">
+                        <div class="slds-truncate" title="Email">{email}</div>
+                    </td>
+                    <td data-label="Phone">
+                        <div class="slds-truncate" title="Phone">{phone}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+        
+    </lightning-card>
+    
+</template>

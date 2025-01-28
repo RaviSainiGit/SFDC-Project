@@ -1,0 +1,69 @@
+<template>
+    <lightning-card title="Add Properties to PMC Credential">
+        <template if:true={isStep1}>
+            <div class="slds-p-around_medium">    
+                <lightning-icon icon-name="standard:answer_public" alternative-text="Icon" size="small"></lightning-icon>
+                <lightning-radio-group name="radioGroup"
+                    label="Look for child Properties:"
+                    options={options}
+                    value={selectedOption}
+                    type="radio"></lightning-radio-group>
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </div>
+        </template>
+        <template if:true={isStep2}>
+            <div class="slds-p-around_medium">
+                <ul class="slds-has-dividers_bottom-space">
+                    <!-- Filters -->
+                    <li class="slds-item">
+                        <lightning-tile>
+                            <lightning-icon icon-name="standard:account" alternative-text="Search Icon" title="Search Properties by Name"></lightning-icon>
+                            <lightning-layout vertical-align="center">
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="10">
+                                    <lightning-input label="Search Account" value={searchCriteria} onchange={handleSearchChange}></lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item flexibility="auto" padding="around-small" size="2" class="paddingTopLayoutItem">
+                                    <lightning-button variant="brand" label="Search" title="Search action" icon-name="utility:search" icon-position="left" onclick={handleSearch}></lightning-button>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-tile>
+                    </li>
+                    <!-- Data Table -->
+                    <li class="slds-item">
+                        <lightning-tile>
+                            <lightning-icon icon-name="standard:contact_list" alternative-text="Data Icon"></lightning-icon>
+                            <lightning-datatable 
+                                data={listOfRecords} 
+                                columns={lstColumns} 
+                                key-field={keyField}
+                                sorted-by={sortedBy}
+                                sorted-direction={sortedDirection}
+                                max-row-selection="1"             
+                                onrowselection={handleRowSelection}
+                                suppress-bottom-bar="true"
+                            ></lightning-datatable>
+                        </lightning-tile>          
+                    </li>
+                </ul>
+                <!-- <lightning-input label="Search Properties By Name" value={surveyHeader} onchange={handleURLChange}></lightning-input> -->
+                <br/>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>&nbsp;&nbsp;
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </div>
+        </template>
+        <template if:true={isStep3}>
+            <div class="slds-p-around_medium">
+                <lightning-input label="Survey Question" value={surveyQuestion} onchange={handleQuestionChange}></lightning-input><br/>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>&nbsp;&nbsp;
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </div>
+        </template>
+        <template if:true={isStep4}>
+            <div class="slds-p-around_medium">
+                <lightning-input label="Thank You Text" value={thankYouText} onchange={handleThankYouTextChange}></lightning-input><br/>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>&nbsp;&nbsp;
+                <lightning-button label="Create Survey" variant="brand" onclick={handleCreateSurvey}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,35 @@
+<template>
+    <lightning-card  variant="Narrow"  title="First Logic LWC" icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                {name}
+            </lightning-layout-item>            
+            <template if:true={message}>
+                <lightning-layout-item padding="around-small">
+                    {message}
+                </lightning-layout-item>
+            </template>
+            <lightning-layout-item padding="around-small">
+                <template for:each={contacts} for:item="contact" for:index="index">
+                    <p key={contact.Id}>{index}</p>
+                    {contact.Name}
+                    {contact.Id}
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item padding='around-small'>
+                <template if:true={records}>
+                    i have some value {records}
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <template for:each={maps} for:item="item">
+                    {item.key} => {item.value} &nbsp; &nbsp;
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-button variant="brand" label="Click" onclick={handleClick}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Contact Display" icon-name="standard:contact">
+    <template for:each={listContacts.data} for:item="con">
+        <p key={con.Id}>
+            {con.Id}
+            {con.FirstName}
+            {con.LastName}
+        </p>
+
+   </template>
+</lightning-card>
+</template>

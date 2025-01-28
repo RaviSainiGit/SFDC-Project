@@ -1,0 +1,50 @@
+<template>
+     
+    <lightning-card title = "Registration Form" icon-name="standard:contact">
+        <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box">
+                        <lightning-input type="text" label="First Name" value={firstNameVal} name="firstName" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="text" label="Last Name" value={lastNameVal} name="lastName" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="text" label="User Name" value={userNameVal} name="userName" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="date" label="DOB" value={dateOfBirthVal} name="dateOfBirth" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box">
+                        <lightning-input type="email" label="Email"  value={emailVal} name="Email" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="text" label="Phone" value={phoneVal} name="Phone" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="password" label="Password" value={passwordVal} name="Password" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                    <div class="custom-box">
+                        <lightning-input type="password" label="Confirm Password" value={confirmPasswordVal} name="confirmPassword" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                        <span style={confirmPasswordMessageStyle}>{confirmPasswordMessage}</span>
+                    </div>
+
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="custom-box">
+                        <lightning-input type="text" label="Address" value={addressVal} name="Address" onchange={regHandleChange} class="slds-m-around_x-small"></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="custom-box">
+                        <lightning-button variant="brand" label="Signup" onclick={handleSubmit} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

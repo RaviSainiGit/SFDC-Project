@@ -1,0 +1,23 @@
+<template>
+
+    <lightning-card  variant="Narrow" title="Hello Welcome To LWC" icon-name="standard:account">
+
+        <div class="slds-p-around_small">
+        <p>
+            <b>Employee Name :</b> {myName}</br>
+            <b>Employee Email :</b> {myEmail}</br>
+            <b>Employee Phone :</b> {myPhone}</br>
+            <b>Employee Address :</b> {myAddress}</br>
+            <b>Company Name :</b> {myCompanyName}</br>
+        </p>
+
+        <lightning-input type="text" variant="standard" name="name" label="Employee Name" onchange={changeName} placeholder="Enter employee name"></lightning-input>
+        <lightning-input type="text" variant="standard" name="name" label="Employee Email" onchange={changeEmail} placeholder="Enter employee email"></lightning-input>
+        <lightning-input type="text" variant="standard" name="name" label="Employee Phone" onchange={changePhone} placeholder="Enter employee phone"></lightning-input>
+        <lightning-input type="text" variant="standard" name="name" label="Employee Address" onchange={changeAddress} placeholder="Enter employee address"></lightning-input>
+        <lightning-input type="text" variant="standard" name="name" label="Company Name" onchange={changeCompanyName} placeholder="Enter company name"></lightning-input>
+
+        </div>
+    </lightning-card>
+
+</template>

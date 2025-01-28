@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account display use wire property method">
+        <div class="slds-m-around_medium">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <P key={acc.Id}>{acc.Name}</P>
+                </template>
+                <template if:true={accounts.error}>
+                    {accounts.error}
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-card title="Account display wire call a imperative method">
+        <div class="slds-m-around_medium">
+        <lightning-button label="Load Account" onclick={handleLoad}></lightning-button>
+
+        <template if:true={accData}>
+            <template for:each={accData} for:item="acc">
+            <p key={acc.Id}>{acc.Name}</p>
+
+        </template>
+<template if:true={error}>
+            {error}
+        </template>
+</template>
+</div>
+</lightning-card>
+
+</template>

@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card  variant="Narrow"  title="Calculator LWC" icon-name="standard:account">
+        
+        <div class="slds-p-around_small">
+
+        <lightning-input type="number" variant="standard" value={FirstNum} label="Enter A Value" onchange={changeFirstNum} ></lightning-input>
+        <lightning-input type="number" variant="standard" value={SecondNum} label="Enter B Value" onchange={changeSecondNum} ></lightning-input></br>
+
+        <lightning-layout horizontal-align="space">   
+            <lightning-button variant="brand" label="+ Add" onclick={addNumbers}></lightning-button>
+            <lightning-button variant="brand" label="- Sub" onclick={subNumbers}></lightning-button>
+            <lightning-button variant="brand" label="* Mul" onclick={multiNumbers}></lightning-button>
+            <lightning-button variant="brand" label="/ Div" onclick={divNumbers}></lightning-button>
+            <lightning-button variant="brand" label="Cancel" onclick={cancelNumbers}></lightning-button>
+        </lightning-layout>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p><b>All Results :</b> {totalSum}</p>
+        </div>
+    </lightning-card>
+
+</template>

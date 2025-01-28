@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <lightning-card title="Send Feedback">
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input label="Name" value={nameValue} onchange={handleNameChange}></lightning-input>
+                <lightning-input label="Feedback" value={feedbackValue} onchange={handleFeedbackChange}></lightning-input> 
+            </div>
+                <lightning-button label="Send" onclick={handleSubmit} class="slds-align_absolute-center"></lightning-button>
+        </lightning-card>
+    </div>
+</template>

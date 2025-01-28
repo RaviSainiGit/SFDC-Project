@@ -1,0 +1,97 @@
+<template>
+    <div class="slds-p-around_medium">
+            <p><lightning-formatted-url value="https://d5g000005krvmeao-dev-ed.my.site.com/s/employee/Groviya.com"  label="Visit Groviya" target="_self" ></lightning-formatted-url></p>
+        </div>
+
+    <lightning-card title="Employee search and pagination with sorting">
+    
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="12" small-device-size="10" medium-device-size="8" large-device-size="12" padding="around-small">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <lightning-input type="text" label="Search Employees Name" value={strSearchEmpName}
+                                        onchange={searchEmployeeAction} ></lightning-input>
+                    </div>
+                </div> 
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="12" small-device-size="10" medium-device-size="8" large-device-size="12" padding="around-small">
+        <table>
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th data-id="Name" onclick={sortName}>
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate" title="Name">Employee Name</span>
+                            <div if:true={isNameSort} style='font-size:18px;'>
+                                <div if:true={isAsc}>
+                                    &#8593;
+                                </div>
+                                <div if:true={isDsc}>
+                                    &#8595;
+                                </div>
+                            </div>
+                        </a>
+                    </th>
+                    <th data-id="Email" onclick={sortEmail}>
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate" title="Email">Email</span>
+                            <div if:true={isEmailSort} style='font-size:18px;'>
+                                <div if:true={isAsc}>
+                                    &#8593;
+                                </div>
+                                <div if:true={isDsc}>
+                                    &#8595;
+                                </div>
+                            </div>
+                        </a>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Mobile</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Status</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={empData} for:item="empItem" >
+                    <tr class="slds-hint-parent" key={empItem.Id}>
+                        <td>
+                            <div class="slds-truncate">{empItem.Name}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{empItem.Email__c}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{empItem.mobile_no__c}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{empItem.status__c}</div>
+                        </td>
+                    </tr>
+                </template>
+</tbody>
+</table>
+</lightning-layout-item>
+</lightning-layout>
+<br/>
+<lightning-layout horizontal-align="space">
+    <lightning-layout-item flexibility="auto">
+        <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+        </lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item flexibility="auto">
+        Page {page} of {totalPage}
+    </lightning-layout-item>
+    <lightning-layout-item flexibility="auto">
+        <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right" onclick={nextHandler}>
+        </lightning-button>
+    </lightning-layout-item>
+</lightning-layout>
+</lightning-card>
+
+
+</template>

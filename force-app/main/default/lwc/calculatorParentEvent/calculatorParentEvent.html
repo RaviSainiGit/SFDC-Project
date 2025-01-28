@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Calculator LWC" icon-name="standard:account">
+        
+        <div class="slds-p-around_small">
+
+        <c-calculator-child-event oncalculate={handleCalculate}></c-calculator-child-event>
+
+        <p><b>All Results :</b> {totalSum}</p>
+        <!-- <div class="result">
+            <p>Result: {result}</p>
+        </div> -->
+        </div>
+    </lightning-card>
+</template>

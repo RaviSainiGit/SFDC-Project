@@ -1,0 +1,15 @@
+<template>
+    
+     <lightning-card  variant="Narrow"  title="Pick List" if:true={options}>
+        
+        <div class="slds-p-horizontal_small"> 
+            <c-multi-select-combobox multi-select="true" 
+                                    onchange={handleSelectOptionList} 
+                                    options={options} 
+                                    value={selectedValueList} 
+                                    label="MultiSelect Pick List">
+                                    </c-multi-select-combobox>
+        </div>
+
+   </lightning-card>
+</template>

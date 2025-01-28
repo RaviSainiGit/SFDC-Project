@@ -1,0 +1,92 @@
+<template>
+
+    <lightning-card title="Data Sorting in Contact Last Name">
+
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                <thead>
+                    <tr class="slds-text-title--caps">
+                        <th data-id="FirstName" onclick={sortFirstName}>
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="FirstName">FirstName</span>
+                                <div if:true={isFirstNameSort} style='font-size:18px;'>
+                                    <div if:true={isAsc}>
+                                        &#8593;
+                                    </div>
+                                    <div if:true={isDsc}>
+                                        &#8595;
+                                    </div>
+                                </div>
+                            </a>
+                        </th>
+                        <th data-id="LastName" onclick={sortLastName}>
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="LastName">LastName</span>
+                                <div if:true={isLastNameSort} style='font-size:18px;'>
+                                    <div if:true={isAsc}>
+                                        &#8593;
+                                    </div>
+                                    <div if:true={isDsc}>
+                                        &#8595;
+                                    </div>
+                                </div>
+                            </a>
+                        </th>
+                        <th data-id="Email" onclick={sortEmail}>
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Email">Email</span>
+                                <div if:true={isEmailSort} style='font-size:18px;'>
+                                    <div if:true={isAsc}>
+                                        &#8593;
+                                    </div>
+                                    <div if:true={isDsc}>
+                                        &#8595;
+                                    </div>
+                                </div>
+                            </a>
+                        </th>
+                        
+                        <th data-id="Phone" onclick={sortPhone}>
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Phone">Phone</span>
+                                <div if:true={isPhoneSort} style='font-size:18px;'>
+                                    <div if:true={isAsc}>
+                                        &#8593;
+                                    </div>
+                                    <div if:true={isDsc}>
+                                        &#8595;
+                                    </div>
+                                </div>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={conData} for:item="con">
+                        <tr key={con.Id}>
+                            <td>
+                                <a href={accURL} 
+                                   target="_blank" 
+                                   data-id={con.Id} 
+                                   onclick={gotoAccount}>{con.FirstName}</a>
+                            </td>
+                            <td>
+                                {con.LastName}
+                            </td>
+                            <td>
+                                {con.Email}
+                            </td>
+                            <td>
+                                <lightning-formatted-phone value={con.Phone}></lightning-formatted-phone>
+                            </td>
+                        </tr>
+                    </template>
+</tbody>
+</table>
+
+</lightning-card>
+
+</template>

@@ -1,0 +1,20 @@
+<template>
+	<lightning-card title="Object Data To Download Metadata" icon-name="standard:contact">
+		<lightning-layout multiple-rows="true" vertical-align="end">
+			<lightning-layout-item size="12" small-device-size="10" medium-device-size="8" large-device-size="4" padding="around-small">
+				<div class="slds-form-element">
+					<div class="slds-form-element__control">
+						<lightning-input placeholder="Search Object To Download Metadata" value={objectApiName} onchange={handleObjectChange}></lightning-input>
+					</div>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="2" medium-device-size="2" large-device-size="2" padding="around-small">
+				<lightning-button label="Export to Excel" title="Export to Excel" variant="brand" onclick={downloadCSV}></lightning-button>
+			</lightning-layout-item>
+		</lightning-layout><br/>
+
+		<div if:true={error}>
+			<lightning-datatable if:true={fields} data={fields} columns={columns} key-field="apiName"></lightning-datatable>
+		</div>
+	</lightning-card>
+</template>
